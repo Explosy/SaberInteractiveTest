@@ -10,7 +10,13 @@ namespace SaberInteractiveTest
     {
         static public string GetBinaryNumber(int decNumber)
         {
-            return "";
+            string result = "";
+            while (decNumber != 0)
+            {
+                result = decNumber % 2 + result;
+                decNumber = decNumber / 2;
+            }
+            return result;
         }
     }
 }
