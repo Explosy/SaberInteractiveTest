@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SaberInteractiveTest
 {
-    static internal class Task1
+    static public class Task1
     {
-        static string GetBinaryNumber(int decNumber)
+        static public string GetBinaryNumber(int decNumber)
         {
             return "";
         }

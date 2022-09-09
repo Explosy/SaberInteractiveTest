@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SaberInteractiveTest
 {
-    static internal class Task2
+    static public class Task2
     {
         static string RemoveDuplicates(string text)
         {
