@@ -16,7 +16,7 @@ namespace Tests
             string expectedResult; //Ожидаемый результат
             string actualResult; //Актуальный результат
 
-            newNumber = numberRandomizer.Next(0, 100);
+            newNumber = numberRandomizer.Next();
             expectedResult = Convert.ToString(newNumber, 2);
             actualResult = Task1.GetBinaryNumber(newNumber);
             Assert.AreEqual(expectedResult, actualResult);

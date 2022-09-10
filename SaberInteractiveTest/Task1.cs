@@ -6,17 +6,47 @@ using System.Threading.Tasks;
 
 namespace SaberInteractiveTest
 {
+    /// <summary>
+    /// Класс реализующий функцию получения двоичного представления числа.
+    /// </summary>
     static public class Task1
     {
+        /// <summary>
+        /// Метод получения двоичного представления десятичного числа
+        /// </summary>
+        /// <param name="decNumber">Число в десятичной системе счисления</param>
+        /// <returns>Строка - двоичное представление</returns>
         static public string GetBinaryNumber(int decNumber)
         {
-            string result = "";
-            while (decNumber != 0)
+            int digitCount = 0;
+            int point = 0;
+            char[] binaryDigits = new char[32];
+            int bitChecker = 1 << 30;
+            if ((decNumber & int.MinValue) == int.MinValue)
             {
-                result = decNumber % 2 + result;
-                decNumber = decNumber / 2;
+                binaryDigits[digitCount++] = '1';
             }
-            return result;
+            else
+            {
+                while ((decNumber & bitChecker) == 0)
+                {
+                    bitChecker >>= 1;
+                    point++;
+                }
+            }
+            for (; point < 31; point++)
+            {
+                if ((decNumber & bitChecker) == bitChecker)
+                {
+                    binaryDigits[digitCount++] = '1';
+                }
+                else
+                {
+                    binaryDigits[digitCount++] = '0';
+                }
+                bitChecker >>= 1;
+            }
+            return new string(binaryDigits, 0, digitCount);
         }
     }
 }
