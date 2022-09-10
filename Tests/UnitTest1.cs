@@ -25,10 +25,10 @@ namespace Tests
         [TestMethod]
         public void Test_RemoveDuplicatesFunction_Task2()
         {
-            string expectedResult = "A B A"; //ќжидаемый результат
+            string expectedResult = "A B A C FD"; //ќжидаемый результат
             string actualResult; //јктуальный результат
 
-            actualResult = Task2.RemoveDuplicates("AAA BBB AAA");
+            actualResult = Task2.RemoveDuplicates("AAA BBB  AAA CC FD");
             Assert.AreEqual(expectedResult, actualResult);
         }
     }

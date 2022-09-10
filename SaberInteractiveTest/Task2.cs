@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace SaberInteractiveTest
 {
+    /// <summary>
+    /// Класс реализующий функцию удаления дубликатов символов из строки.
+    /// </summary>
     static public class Task2
     {
+        /// <summary>
+        /// Метод, удаляющий дубликаты из строки
+        /// </summary>
+        /// <param name="text">Исходная строка с дубликатами</param>
+        /// <returns>Возвращает строку с неповторяющимися подряд символами</returns>
         static public string RemoveDuplicates(string text)
         {
             char currentChar;
@@ -15,10 +23,11 @@ namespace SaberInteractiveTest
             int charCount = 0;
             int index = 0;
 
-
-            charWithoutDuplicates[charCount] = text[index];
+            
+            charWithoutDuplicates[charCount] = text[index]; //Добавление первого символа строки в результирующий массив символов
             index++;
-            do
+            
+            do //Обработка всех последующих символов
             {
                 currentChar = text[index];
                 if (currentChar != charWithoutDuplicates[charCount])
