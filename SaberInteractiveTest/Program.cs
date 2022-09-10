@@ -8,10 +8,14 @@ namespace SaberInteractiveTest
         {
             Console.WriteLine("Тестовое задание для SaberInteractive");
             Console.WriteLine("Task1");
+            
             Random numberRandomizer = new Random();
             int decNumber = numberRandomizer.Next();
-            string binaryNumber = Task1.GetBinaryNumber(-67);
+            
+            string binaryNumber = Task1.GetBinaryNumber(decNumber);
+            Console.WriteLine(binaryNumber+'\n');
 
+            Console.WriteLine("Task2");
         }
     }
 }

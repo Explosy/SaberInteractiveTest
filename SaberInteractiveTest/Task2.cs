@@ -8,9 +8,28 @@ namespace SaberInteractiveTest
 {
     static public class Task2
     {
-        static string RemoveDuplicates(string text)
+        static public string RemoveDuplicates(string text)
         {
-            return "";
+            char currentChar;
+            char[] charWithoutDuplicates = new char[text.Length];
+            int charCount = 0;
+            int index = 0;
+
+
+            charWithoutDuplicates[charCount] = text[index];
+            index++;
+            do
+            {
+                currentChar = text[index];
+                if (currentChar != charWithoutDuplicates[charCount])
+                {
+                    charWithoutDuplicates[++charCount] = currentChar;
+                }
+                index++;
+            }
+            while (index < text.Length);
+
+            return new string(charWithoutDuplicates, 0, charCount+1);
         }
     }
 }

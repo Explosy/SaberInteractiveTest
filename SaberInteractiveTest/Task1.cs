@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SaberInteractiveTest
+﻿namespace SaberInteractiveTest
 {
     /// <summary>
     /// Класс реализующий функцию получения двоичного представления числа.
@@ -22,19 +16,21 @@ namespace SaberInteractiveTest
             int point = 0;
             char[] binaryDigits = new char[32];
             int bitChecker = 1 << 30;
-            if ((decNumber & int.MinValue) == int.MinValue)
+            
+            if ((decNumber & int.MinValue) == int.MinValue) //Проверка знака исходного числа
             {
                 binaryDigits[digitCount++] = '1';
             }
             else
             {
-                while ((decNumber & bitChecker) == 0)
+                while ((decNumber & bitChecker) == 0) //Пропуск первых незначимых нулей, если число положительное
                 {
                     bitChecker >>= 1;
                     point++;
                 }
             }
-            for (; point < 31; point++)
+            
+            for (; point < 31; point++) //Проверка разрядов на предмет их значения
             {
                 if ((decNumber & bitChecker) == bitChecker)
                 {

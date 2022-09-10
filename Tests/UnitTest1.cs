@@ -21,5 +21,15 @@ namespace Tests
             actualResult = Task1.GetBinaryNumber(newNumber);
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [TestMethod]
+        public void Test_RemoveDuplicatesFunction_Task2()
+        {
+            string expectedResult = "A B A"; //Ожидаемый результат
+            string actualResult; //Актуальный результат
+
+            actualResult = Task2.RemoveDuplicates("AAA BBB AAA");
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
