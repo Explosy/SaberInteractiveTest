@@ -22,7 +22,7 @@ namespace SaberInteractiveTest
             Console.WriteLine("Task2");
             Console.ForegroundColor = ConsoleColor.White;
             
-            string stringWithDuplicate = "AAA BBB   AAA CCC FD FGGHF";
+            StringBuilder stringWithDuplicate = new StringBuilder("AAA BBB   AAA CCC FD FGGHF");
             Console.WriteLine("Строка с дубликатами: " + stringWithDuplicate);
             string stringWithoutDuplicates = Task2.RemoveDuplicates(stringWithDuplicate);
             Console.WriteLine("Строка без дубликатов: " + stringWithoutDuplicates);
